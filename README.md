@@ -3,7 +3,9 @@
 *. step 1 - rb and credit project based on MF
 -. npx nx g @nrwl/angular:app rb --mfe --mfeType=host --routing=true
 -. npx nx g @nrwl/angular:app credit --mfe --mfeType=remote --port=4201 --host=rb --routing=true
--. changes: bootstrap, angular.json, webpack.config
+-. npx nx run rb:serve-mfe
+-. browse: http://localhost:4200/credit
+-. explain changes: bootstrap, angular.json, webpack.config
 -. guide: https://nx.dev/l/a/guides/setup-mfe-with-angular
 
 *. step 2 - credit - loan request - lazy route
