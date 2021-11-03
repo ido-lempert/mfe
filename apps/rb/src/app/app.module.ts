@@ -11,6 +11,7 @@ import {loadRemoteModule} from "@angular-architects/module-federation";
     BrowserModule,
     RouterModule.forRoot(
       [
+        {path: '', loadChildren: () => import('./homepage/homepage.module').then(m => m.HomepageModule)},
         {
           path: 'credit/loan-request',
           // loadChildren: () =>

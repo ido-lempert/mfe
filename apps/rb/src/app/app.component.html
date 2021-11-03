@@ -1,3 +1,15 @@
-<a routerLink="/credit/loan-request">credit - loan request</a>
+<nav>
+  <ul>
+    <li><a routerLink="/">homepage</a></li>
+    <li><a routerLink="/credit/loan-request">credit - loan request</a></li>
+  </ul>
+</nav>
+
+
+
+<p id="loading" *ngIf="loading">LOADING... <span *ngIf="reties > 0">{{reties}}</span></p>
+<p id="error" *ngIf="error">ERROR!!... </p>
+
+<hr>
 
 <router-outlet></router-outlet>

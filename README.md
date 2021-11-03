@@ -26,6 +26,11 @@
 -. guide: https://www.angulararchitects.io/en/aktuelles/dynamic-module-federation-with-angular/
 
 *. step 4 - routes events - loading and error
+-. npx nx serve rb
+-. show loading, retries and error
+-. npx nx serve credit
+-. show loading then success
+
 *. step 5 - credit - loan request - pass params: link to homepage
 *. step 6 - credit - loans CRUD - relative links
 *. step 7 - lib - accounts - account service - MF shared
