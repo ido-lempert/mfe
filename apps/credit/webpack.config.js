@@ -44,7 +44,7 @@ module.exports = {
       name: 'credit',
       filename: 'remoteEntry.js',
       exposes: {
-        './Module': 'apps/credit/src/app/remote-entry/entry.module.ts',
+        // './Module': 'apps/credit/src/app/remote-entry/entry.module.ts',
         './loan-request.module': 'apps/credit/src/app/loan-request/loan-request.module.ts',
       },
       shared: {
