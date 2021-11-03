@@ -1,0 +1,125 @@
+{
+  "version": 1,
+  "projects": {
+    "biz": {
+      "projectType": "application",
+      "root": "apps/biz",
+      "sourceRoot": "apps/biz/src",
+      "prefix": "poalim",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "outputs": ["{options.outputPath}"],
+          "options": {
+            "outputPath": "dist/apps/biz",
+            "index": "apps/biz/src/index.html",
+            "main": "apps/biz/src/main.ts",
+            "polyfills": "apps/biz/src/polyfills.ts",
+            "tsConfig": "apps/biz/tsconfig.app.json",
+            "inlineStyleLanguage": "scss",
+            "assets": ["apps/biz/src/favicon.ico", "apps/biz/src/assets"],
+            "styles": ["apps/biz/src/styles.scss"],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
+                }
+              ],
+              "fileReplacements": [
+                {
+                  "replace": "apps/biz/src/environments/environment.ts",
+                  "with": "apps/biz/src/environments/environment.prod.ts"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "configurations": {
+            "production": {
+              "browserTarget": "biz:build:production"
+            },
+            "development": {
+              "browserTarget": "biz:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "biz:build"
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "apps/biz/src/**/*.ts",
+              "apps/biz/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/apps/biz"],
+          "options": {
+            "jestConfig": "apps/biz/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      },
+      "tags": []
+    },
+    "biz-e2e": {
+      "root": "apps/biz-e2e",
+      "sourceRoot": "apps/biz-e2e/src",
+      "projectType": "application",
+      "architect": {
+        "e2e": {
+          "builder": "@nrwl/cypress:cypress",
+          "options": {
+            "cypressConfig": "apps/biz-e2e/cypress.json",
+            "devServerTarget": "biz:serve:development",
+            "tsConfig": "apps/biz-e2e/tsconfig.json"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "biz:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "outputs": ["{options.outputFile}"],
+          "options": {
+            "lintFilePatterns": ["apps/biz-e2e/**/*.{js,ts}"]
+          }
+        }
+      },
+      "tags": [],
+      "implicitDependencies": ["biz"]
+    }
+  }
+}
