@@ -14,6 +14,9 @@ import {loadRemoteModule} from "@angular-architects/module-federation";
         {path: '', loadChildren: () => import('./homepage/homepage.module').then(m => m.HomepageModule)},
         {
           path: 'credit/loan-request',
+          data: {
+            homepageLink: '/'
+          },
           // loadChildren: () =>
           //   import('credit/loan-request.module').then((m) => m.LoanRequestModule),
           loadChildren: () => loadRemoteModule({

@@ -32,6 +32,8 @@
 -. show loading then success
 
 *. step 5 - credit - loan request - pass params: link to homepage
+-. different homepage link
+
 *. step 6 - credit - loans CRUD - relative links
 *. step 7 - lib - accounts - account service - MF shared
 *. step 8 - ngx translation - loan request transaltion
