@@ -9,6 +9,16 @@
 -. guide: https://nx.dev/l/a/guides/setup-mfe-with-angular
 
 *. step 2 - credit - loan request - lazy route
+-. npx nx g m loan-request --routing --project credit
+-. npx nx g c loan-request --project credit
+-. add route: {path: 'loan-request', loadChildren:() => import('./loan-request/loan-request.module').then(m => m.LoanRequestModule)},
+-. add route link: <a routerLink="/loan-request">loan request</a>
+-. serve: npx nx serve credit
+-. browse: http://localhost:4201/loan-request
+-. expose and load from rb: webpack.config, type.d, config rb route
+-. serve: npx nx run rb:serve-mfe
+-. browse: http://localhost:4200/
+
 *. step 3 - load EntryPoint on run time
 *. step 4 - routes events - loading and error
 *. step 5 - credit - loan request - pass params: link to homepage

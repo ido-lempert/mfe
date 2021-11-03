@@ -45,6 +45,7 @@ module.exports = {
       filename: 'remoteEntry.js',
       exposes: {
         './Module': 'apps/credit/src/app/remote-entry/entry.module.ts',
+        './loan-request.module': 'apps/credit/src/app/loan-request/loan-request.module.ts',
       },
       shared: {
         '@angular/core': { singleton: true, strictVersion: true },

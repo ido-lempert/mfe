@@ -11,9 +11,9 @@ import { RouterModule } from '@angular/router';
     RouterModule.forRoot(
       [
         {
-          path: 'credit',
+          path: 'credit/loan-request',
           loadChildren: () =>
-            import('credit/Module').then((m) => m.RemoteEntryModule),
+            import('credit/loan-request.module').then((m) => m.LoanRequestModule),
         },
       ],
       { initialNavigation: 'enabledBlocking' }
