@@ -13,6 +13,7 @@ import {RouterModule, Routes} from '@angular/router';
 const routes: Routes = [
   {path: 'homepage', loadChildren: () => import('./homepage/homepage.module').then(m => m.HomepageModule)},
   {path: 'loan-request', loadChildren:() => import('./loan-request/loan-request.module').then(m => m.LoanRequestModule)},
+  {path: 'mortgage', loadChildren:() => import('./mortgage/mortgage.module').then(m => m.MortgageModule)},
 ];
 
 @NgModule({

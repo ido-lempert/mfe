@@ -42,7 +42,7 @@ module.exports = {
   plugins: [
     new ModuleFederationPlugin({
       remotes: {
-        // credit: 'credit@http://localhost:4201/remoteEntry.js',
+        credit: 'credit@http://localhost:4201/remoteEntry.js',
       },
       shared: {
         '@angular/core': { singleton: true, strictVersion: true },

@@ -17,13 +17,18 @@ import {loadRemoteModule} from "@angular-architects/module-federation";
           data: {
             homepageLink: '/'
           },
-          // loadChildren: () =>
-          //   import('credit/loan-request.module').then((m) => m.LoanRequestModule),
-          loadChildren: () => loadRemoteModule({
-            remoteEntry: 'http://localhost:4201/remoteEntry.js',
-            remoteName: 'credit',
-            exposedModule: './loan-request.module'
-          }).then(m => m.LoanRequestModule),
+          loadChildren: () =>
+            import('credit/loan-request.module').then((m) => m.LoanRequestModule),
+          // loadChildren: () => loadRemoteModule({
+          //   remoteEntry: 'http://localhost:4201/remoteEntry.js',
+          //   remoteName: 'credit',
+          //   exposedModule: './loan-request.module'
+          // }).then(m => m.LoanRequestModule),
+        },
+        {
+          path: 'mortgage',
+          loadChildren: () =>
+            import('credit/mortgage.module').then((m) => m.LoanRequestModule),
         },
       ],
       { initialNavigation: 'enabledBlocking' }

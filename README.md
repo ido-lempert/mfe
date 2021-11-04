@@ -35,7 +35,11 @@
 -. different homepage link
 
 *. step 6 - credit - loans CRUD - relative links
+
 *. step 7 - lib - accounts - account service - MF shared
+
 *. step 8 - ngx translation - loan request transaltion
+
 *. step 9 - load service without route
+
 *. step 10 - load component without route
