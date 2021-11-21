@@ -49,5 +49,7 @@
 -. Angular I18N: isolate, assign, override
 
 *. step 9 - load service without route
+-. nx g service shared/credit-rating --project=credit
+-. Injector.get(SERVICE)
 
 *. step 10 - load component without route
