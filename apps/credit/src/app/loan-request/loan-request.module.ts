@@ -5,10 +5,12 @@ import { LoanRequestRoutingModule } from './loan-request-routing.module';
 import { LoanRequestComponent } from './loan-request.component';
 import {TranslateModule, TranslateService} from "@ngx-translate/core";
 import translations from './i18n/he.json';
+import {LoansBannerComponent} from "../shared/loans-banner/loans-banner.component";
 
 @NgModule({
   declarations: [
-    LoanRequestComponent
+    LoanRequestComponent,
+    LoansBannerComponent
   ],
   imports: [
     CommonModule,

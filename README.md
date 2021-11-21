@@ -53,3 +53,8 @@
 -. Injector.get(SERVICE)
 
 *. step 10 - load component without route
+-. nx g component shared/loans-banner --project credit
+-. private viewContainerRef: ViewContainerRef,
+   private componentFactoryResolver: ComponentFactoryResolver
+-. const comp = this.componentFactoryResolver.resolveComponentFactory(LoansBannerComponent);
+   viewContainerRef.createComponent(comp);
