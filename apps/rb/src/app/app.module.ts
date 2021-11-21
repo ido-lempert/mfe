@@ -5,6 +5,8 @@ import { AppComponent } from './app.component';
 import { RouterModule } from '@angular/router';
 import {loadRemoteModule} from "@angular-architects/module-federation";
 
+import {routes as routesCreditMortgage} from 'credit/mortgage-routes';
+
 @NgModule({
   declarations: [AppComponent],
   imports: [
@@ -27,8 +29,7 @@ import {loadRemoteModule} from "@angular-architects/module-federation";
         },
         {
           path: 'mortgage',
-          loadChildren: () =>
-            import('credit/mortgage.module').then((m) => m.LoanRequestModule),
+          children: routesCreditMortgage
         },
       ],
       { initialNavigation: 'enabledBlocking' }

@@ -35,6 +35,9 @@
 -. different homepage link
 
 *. step 6 - credit - loans CRUD - relative links
+-. create mortgage - list, request
+-. export const routes
+-. import {routes as routesCreditMortgage} from 'credit/mortgage-routes';
 
 *. step 7 - lib - accounts - account service - MF shared
 
