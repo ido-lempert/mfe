@@ -9,6 +9,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import {RouterModule, Routes} from '@angular/router';
+import {TranslateModule} from "@ngx-translate/core";
 
 const routes: Routes = [
   {path: 'homepage', loadChildren: () => import('./homepage/homepage.module').then(m => m.HomepageModule)},
@@ -20,6 +21,9 @@ const routes: Routes = [
   declarations: [AppComponent],
   imports: [
     BrowserModule,
+    TranslateModule.forRoot({
+      defaultLanguage: 'he'
+    }),
     RouterModule.forRoot(routes, { initialNavigation: 'enabledBlocking' }),
   ],
   providers: [],

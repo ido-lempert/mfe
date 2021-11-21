@@ -48,6 +48,7 @@ module.exports = {
         // './Module': 'apps/credit/src/app/remote-entry/entry.module.ts',
         './loan-request.module': 'apps/credit/src/app/loan-request/loan-request.module.ts',
         './mortgage-routes': 'apps/credit/src/app/mortgage/mortgage-routes.ts',
+        './shared/credit-rating.service' : 'apps/credit/src/app/shared/credit-rating.service.ts',
       },
       shared: {
         '@angular/core': { singleton: true, strictVersion: true },
