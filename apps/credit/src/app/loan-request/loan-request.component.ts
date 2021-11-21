@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
+import {AccountsService} from "@poalim/accounts";
 
 @Component({
   selector: 'poalim-loan-request',
@@ -8,9 +9,11 @@ import {ActivatedRoute} from "@angular/router";
 })
 export class LoanRequestComponent implements OnInit {
   homepageLink: string;
+  accountId: string;
 
-  constructor(private activatedRoute: ActivatedRoute) {
+  constructor(private activatedRoute: ActivatedRoute, private accountsService: AccountsService) {
     this.homepageLink = this.activatedRoute.snapshot.data.homepageLink || '/homepage';
+    this.accountId = accountsService.selectedAccountId;
   }
 
   ngOnInit(): void {

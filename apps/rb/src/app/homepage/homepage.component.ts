@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {AccountsService} from "@poalim/accounts";
 
 @Component({
   selector: 'poalim-homepage',
@@ -6,8 +7,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./homepage.component.scss']
 })
 export class HomepageComponent implements OnInit {
+  accountId: string;
 
-  constructor() { }
+  constructor(private accountsService: AccountsService) {
+    this.accountId = accountsService.selectedAccountId;
+  }
 
   ngOnInit(): void {
   }

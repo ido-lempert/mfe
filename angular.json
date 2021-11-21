@@ -1,6 +1,32 @@
 {
   "version": 1,
   "projects": {
+    "accounts": {
+      "projectType": "library",
+      "root": "libs/accounts",
+      "sourceRoot": "libs/accounts/src",
+      "prefix": "poalim",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/accounts"],
+          "options": {
+            "jestConfig": "libs/accounts/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/accounts/src/**/*.ts",
+              "libs/accounts/src/**/*.html"
+            ]
+          }
+        }
+      },
+      "tags": []
+    },
     "biz": {
       "projectType": "application",
       "root": "apps/biz",

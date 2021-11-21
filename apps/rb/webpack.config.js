@@ -20,6 +20,7 @@ const sharedMappings = new mf.SharedMappings();
 sharedMappings.register(
   tsConfigPath,
   [
+    '@poalim/accounts'
     /* mapped paths to share */
   ],
   workspaceRootPath

@@ -40,6 +40,8 @@
 -. import {routes as routesCreditMortgage} from 'credit/mortgage-routes';
 
 *. step 7 - lib - accounts - account service - MF shared
+-. nx g lib accounts
+-. nx g service accounts --project accounts
 
 *. step 8 - ngx translation - loan request transaltion
 
