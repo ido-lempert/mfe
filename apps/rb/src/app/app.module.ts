@@ -6,11 +6,17 @@ import { RouterModule } from '@angular/router';
 import {loadRemoteModule} from "@angular-architects/module-federation";
 
 import {routes as routesCreditMortgage} from 'credit/mortgage-routes';
+import {TranslateModule, TranslateService} from "@ngx-translate/core";
+
+import translations from '../i18n/he.json';
 
 @NgModule({
   declarations: [AppComponent],
   imports: [
     BrowserModule,
+    TranslateModule.forRoot({
+      defaultLanguage: 'he'
+    }),
     RouterModule.forRoot(
       [
         {path: '', loadChildren: () => import('./homepage/homepage.module').then(m => m.HomepageModule)},
@@ -38,4 +44,9 @@ import {routes as routesCreditMortgage} from 'credit/mortgage-routes';
   providers: [],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule {
+  constructor(private translateService: TranslateService) {
+    translateService.setTranslation('he', translations);
+    translateService.use('he');
+  }
+}

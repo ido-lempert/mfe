@@ -43,7 +43,10 @@
 -. nx g lib accounts
 -. nx g service accounts --project accounts
 
-*. step 8 - ngx translation - loan request transaltion
+*. step 8 - ngx translation - loan request translation
+-. npm install @ngx-translate/core@13.0.0 --save
+-. explain our project issue: replace + single translate file
+-. Angular I18N: isolate, assign, override
 
 *. step 9 - load service without route
 
