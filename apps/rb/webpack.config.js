@@ -42,8 +42,14 @@ module.exports = {
   },
   plugins: [
     new ModuleFederationPlugin({
+      name: 'rb',
+      filename: 'remoteEntry.js',
       remotes: {
         credit: 'credit@http://localhost:4201/remoteEntry.js',
+      },
+      exposes: {
+        './homepage.module': 'apps/rb/src/app/homepage/homepage.module.ts',
+        './homepage.component': 'apps/rb/src/app/homepage/homepage.component.ts',
       },
       shared: {
         '@angular/core': { singleton: true, strictVersion: true },

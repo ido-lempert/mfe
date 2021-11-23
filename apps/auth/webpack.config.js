@@ -20,7 +20,6 @@ const sharedMappings = new mf.SharedMappings();
 sharedMappings.register(
   tsConfigPath,
   [
-    '@poalim/accounts'
     /* mapped paths to share */
   ],
   workspaceRootPath
@@ -28,7 +27,7 @@ sharedMappings.register(
 
 module.exports = {
   output: {
-    uniqueName: 'credit',
+    uniqueName: 'auth',
     publicPath: 'auto',
   },
   optimization: {
@@ -42,25 +41,16 @@ module.exports = {
   },
   plugins: [
     new ModuleFederationPlugin({
-      name: 'credit',
+      name: 'auth',
       filename: 'remoteEntry.js',
-      remotes: {
-        auth: 'auth@http://localhost:4202/remoteEntry.js',
-        rb: 'rb@http://localhost:4200/remoteEntry.js',
-      },
       exposes: {
-        // './Module': 'apps/credit/src/app/remote-entry/entry.module.ts',
-        './loan-request.module': 'apps/credit/src/app/loan-request/loan-request.module.ts',
-        './mortgage-routes': 'apps/credit/src/app/mortgage/mortgage-routes.ts',
-        './shared/credit-rating.service' : 'apps/credit/src/app/shared/credit-rating.service.ts',
-        './shared/loans-banner/loans-banner.component': 'apps/credit/src/app/shared/loans-banner/loans-banner.component.ts',
+        './login.module': 'apps/auth/src/app/login/login.module.ts',
       },
       shared: {
         '@angular/core': { singleton: true, strictVersion: true },
         '@angular/common': { singleton: true, strictVersion: true },
         '@angular/common/http': { singleton: true, strictVersion: true },
         '@angular/router': { singleton: true, strictVersion: true },
-        '@ngx-translate/core': { singleton: true, strictVersion: true },
         ...sharedMappings.getDescriptors(),
       },
     }),

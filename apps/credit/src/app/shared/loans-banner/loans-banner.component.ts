@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, ComponentFactoryResolver, OnInit, ViewContainerRef} from '@angular/core';
+
+// import {HomepageComponent} from "rb/homepage.component";
 
 @Component({
   selector: 'poalim-loans-banner',
@@ -7,7 +9,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoansBannerComponent implements OnInit {
 
-  constructor() { }
+  constructor(              private viewContainerRef: ViewContainerRef,
+                            private componentFactoryResolver: ComponentFactoryResolver) {
+    // const comp = this.componentFactoryResolver.resolveComponentFactory(LoansBannerComponent);
+    // viewContainerRef.createComponent(comp);
+  }
 
   ngOnInit(): void {
   }

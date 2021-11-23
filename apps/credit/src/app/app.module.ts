@@ -3,7 +3,6 @@
  * compilation, allowing it to be included in the built bundle. This is required
  * for the Module Federation Plugin to expose the Module correctly.
  * */
-import { RemoteEntryModule } from './remote-entry/entry.module';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -15,6 +14,8 @@ const routes: Routes = [
   {path: 'homepage', loadChildren: () => import('./homepage/homepage.module').then(m => m.HomepageModule)},
   {path: 'loan-request', loadChildren:() => import('./loan-request/loan-request.module').then(m => m.LoanRequestModule)},
   {path: 'mortgage', loadChildren:() => import('./mortgage/mortgage.module').then(m => m.MortgageModule)},
+  {path: 'login', loadChildren:() => import('auth/login.module').then(m => m.LoginModule)},
+  {path: 'rb/homepage', loadChildren:() => import('rb/homepage.module').then(m => m.HomepageModule)},
 ];
 
 @NgModule({

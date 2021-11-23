@@ -58,3 +58,9 @@
    private componentFactoryResolver: ComponentFactoryResolver
 -. const comp = this.componentFactoryResolver.resolveComponentFactory(LoansBannerComponent);
    viewContainerRef.createComponent(comp);
+
+*. step 11 - Bi-directional
+-. npx nx g @nrwl/angular:app auth --mfe --mfeType=remote --port=4202 --routing=true
+-. nx g module login --routing --project auth
+-. nx g component login --project auth
+-. rb -> Credit <- auth
