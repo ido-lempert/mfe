@@ -11,7 +11,7 @@ export class LoansBannerComponent implements OnInit {
 
   constructor(              private viewContainerRef: ViewContainerRef,
                             private componentFactoryResolver: ComponentFactoryResolver) {
-    // const comp = this.componentFactoryResolver.resolveComponentFactory(LoansBannerComponent);
+    // const comp = this.componentFactoryResolver.resolveComponentFactory(HomepageComponent);
     // viewContainerRef.createComponent(comp);
   }
 
